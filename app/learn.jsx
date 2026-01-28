@@ -8,6 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 import { useRouter } from 'expo-router';
+import BottomNav from '../components/BottomNav';
 
 export default function Learn() {
   const router = useRouter();
@@ -277,23 +278,7 @@ export default function Learn() {
       </ScrollView>
 
       {/* Bottom Navigation */}
-      <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/home')}>
-          <Text style={styles.navIcon}>🏠</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/learn')}>
-          <Text style={styles.navIcon}>📖</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/game')}>
-          <Text style={styles.navIcon}>🎮</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/marketplace')}>
-          <Text style={styles.navIcon}>🛒</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/profile')}>
-          <Text style={styles.navIcon}>👤</Text>
-        </TouchableOpacity>
-      </View>
+      <BottomNav />
     </View>
   );
 }
